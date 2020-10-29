@@ -18,8 +18,10 @@ addBtn.addEventListener('click', () => {
     const enteredReason = reasonInput.value;
     const enteredAmount = amountInput.value;
 
-    if (enteredAmount.trim().length <= 0 || enteredAmount <= 0 || enteredAmount.trim().length <= 0)
+    if (enteredAmount.trim().length <= 0 || enteredAmount <= 0 || enteredAmount.trim().length <= 0) {
+        alert('Please Enter valid data!');
         return;
+    }
 
     const newItem = document.createElement('ion-item');
     newItem.textContent = enteredReason + ': $' + enteredAmount;
