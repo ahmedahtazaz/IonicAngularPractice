@@ -14,12 +14,22 @@ const clear = () => {
     amountInput.value = '';
 }
 
+const createAlert = () => {
+    const alert = document.createElement('ion-alert');
+    alert.header = 'Invalid Values';
+    alert.message = 'Please Enter valid Values!';
+    alert.buttons = ['OK'];
+
+    document.body.appendChild(alert);
+    return alert.present();
+}
+
 addBtn.addEventListener('click', () => {
     const enteredReason = reasonInput.value;
     const enteredAmount = amountInput.value;
 
     if (enteredAmount.trim().length <= 0 || enteredAmount <= 0 || enteredAmount.trim().length <= 0) {
-        alert('Please Enter valid data!');
+        createAlert();
         return;
     }
 
